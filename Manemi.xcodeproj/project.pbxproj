@@ -7,13 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D00CFFAE2904297B00B5D933 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D00CFFAD2904297B00B5D933 /* ComposableArchitecture */; };
+		D00CFFB02904297B00B5D933 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = D00CFFAF2904297B00B5D933 /* Dependencies */; };
+		D00CFFB2290429B900B5D933 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00CFFB1290429B900B5D933 /* AuthView.swift */; };
+		D00CFFB529042F0600B5D933 /* RxKakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = D00CFFB429042F0600B5D933 /* RxKakaoSDK */; };
 		D01FCA38290422FD001BDFE9 /* ManemiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FCA37290422FD001BDFE9 /* ManemiApp.swift */; };
 		D01FCA3A290422FD001BDFE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01FCA39290422FD001BDFE9 /* ContentView.swift */; };
 		D01FCA3C290422FF001BDFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D01FCA3B290422FF001BDFE9 /* Assets.xcassets */; };
 		D01FCA3F290422FF001BDFE9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D01FCA3E290422FF001BDFE9 /* Preview Assets.xcassets */; };
+		D01FCA58290427B0001BDFE9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D01FCA57290427B0001BDFE9 /* FirebaseAuth */; };
+		D01FCA5A290427B0001BDFE9 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = D01FCA59290427B0001BDFE9 /* FirebaseAuthCombine-Community */; };
+		D01FCA5C290427B0001BDFE9 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = D01FCA5B290427B0001BDFE9 /* FirebaseCrashlytics */; };
+		D01FCA5E290427B0001BDFE9 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = D01FCA5D290427B0001BDFE9 /* FirebaseDatabase */; };
+		D01FCA60290427B0001BDFE9 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D01FCA5F290427B0001BDFE9 /* FirebaseDatabaseSwift */; };
+		D01FCA62290427B0001BDFE9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D01FCA61290427B0001BDFE9 /* FirebaseFirestore */; };
+		D01FCA64290427B0001BDFE9 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = D01FCA63290427B0001BDFE9 /* FirebaseFirestoreCombine-Community */; };
+		D01FCA66290427B0001BDFE9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D01FCA65290427B0001BDFE9 /* FirebaseStorage */; };
+		D01FCA68290427B0001BDFE9 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = D01FCA67290427B0001BDFE9 /* FirebaseStorageCombine-Community */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D00CFFB1290429B900B5D933 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		D00CFFB629042F4600B5D933 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D01FCA34290422FD001BDFE9 /* Manemi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Manemi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01FCA37290422FD001BDFE9 /* ManemiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManemiApp.swift; sourceTree = "<group>"; };
 		D01FCA39290422FD001BDFE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,6 +41,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D01FCA60290427B0001BDFE9 /* FirebaseDatabaseSwift in Frameworks */,
+				D00CFFB02904297B00B5D933 /* Dependencies in Frameworks */,
+				D00CFFAE2904297B00B5D933 /* ComposableArchitecture in Frameworks */,
+				D01FCA5C290427B0001BDFE9 /* FirebaseCrashlytics in Frameworks */,
+				D01FCA58290427B0001BDFE9 /* FirebaseAuth in Frameworks */,
+				D00CFFB529042F0600B5D933 /* RxKakaoSDK in Frameworks */,
+				D01FCA5E290427B0001BDFE9 /* FirebaseDatabase in Frameworks */,
+				D01FCA5A290427B0001BDFE9 /* FirebaseAuthCombine-Community in Frameworks */,
+				D01FCA66290427B0001BDFE9 /* FirebaseStorage in Frameworks */,
+				D01FCA62290427B0001BDFE9 /* FirebaseFirestore in Frameworks */,
+				D01FCA68290427B0001BDFE9 /* FirebaseStorageCombine-Community in Frameworks */,
+				D01FCA64290427B0001BDFE9 /* FirebaseFirestoreCombine-Community in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +78,12 @@
 		D01FCA36290422FD001BDFE9 /* Manemi */ = {
 			isa = PBXGroup;
 			children = (
+				D00CFFB629042F4600B5D933 /* Info.plist */,
 				D01FCA37290422FD001BDFE9 /* ManemiApp.swift */,
 				D01FCA39290422FD001BDFE9 /* ContentView.swift */,
 				D01FCA3B290422FF001BDFE9 /* Assets.xcassets */,
 				D01FCA3D290422FF001BDFE9 /* Preview Content */,
+				D00CFFB1290429B900B5D933 /* AuthView.swift */,
 			);
 			path = Manemi;
 			sourceTree = "<group>";
@@ -83,6 +112,20 @@
 			dependencies = (
 			);
 			name = Manemi;
+			packageProductDependencies = (
+				D01FCA57290427B0001BDFE9 /* FirebaseAuth */,
+				D01FCA59290427B0001BDFE9 /* FirebaseAuthCombine-Community */,
+				D01FCA5B290427B0001BDFE9 /* FirebaseCrashlytics */,
+				D01FCA5D290427B0001BDFE9 /* FirebaseDatabase */,
+				D01FCA5F290427B0001BDFE9 /* FirebaseDatabaseSwift */,
+				D01FCA61290427B0001BDFE9 /* FirebaseFirestore */,
+				D01FCA63290427B0001BDFE9 /* FirebaseFirestoreCombine-Community */,
+				D01FCA65290427B0001BDFE9 /* FirebaseStorage */,
+				D01FCA67290427B0001BDFE9 /* FirebaseStorageCombine-Community */,
+				D00CFFAD2904297B00B5D933 /* ComposableArchitecture */,
+				D00CFFAF2904297B00B5D933 /* Dependencies */,
+				D00CFFB429042F0600B5D933 /* RxKakaoSDK */,
+			);
 			productName = Manemi;
 			productReference = D01FCA34290422FD001BDFE9 /* Manemi.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +154,11 @@
 				Base,
 			);
 			mainGroup = D01FCA2B290422FD001BDFE9;
+			packageReferences = (
+				D01FCA56290427B0001BDFE9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D00CFFAC2904297A00B5D933 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				D00CFFB329042F0600B5D933 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */,
+			);
 			productRefGroup = D01FCA35290422FD001BDFE9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +187,7 @@
 			files = (
 				D01FCA3A290422FD001BDFE9 /* ContentView.swift in Sources */,
 				D01FCA38290422FD001BDFE9 /* ManemiApp.swift in Sources */,
+				D00CFFB2290429B900B5D933 /* AuthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +244,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -269,6 +318,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Manemi/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Manemi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -297,6 +347,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Manemi/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Manemi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -337,6 +388,96 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D00CFFAC2904297A00B5D933 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.43.0;
+			};
+		};
+		D00CFFB329042F0600B5D933 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk-rx";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		D01FCA56290427B0001BDFE9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D00CFFAD2904297B00B5D933 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D00CFFAC2904297A00B5D933 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		D00CFFAF2904297B00B5D933 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D00CFFAC2904297A00B5D933 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = Dependencies;
+		};
+		D00CFFB429042F0600B5D933 /* RxKakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D00CFFB329042F0600B5D933 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */;
+			productName = RxKakaoSDK;
+		};
+		D01FCA57290427B0001BDFE9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D01FCA56290427B0001BDFE9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		D01FCA59290427B0001BDFE9 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D01FCA56290427B0001BDFE9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		D01FCA5B290427B0001BDFE9 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D01FCA56290427B0001BDFE9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		D01FCA5D290427B0001BDFE9 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D01FCA56290427B0001BDFE9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		D01FCA5F290427B0001BDFE9 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D01FCA56290427B0001BDFE9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		D01FCA61290427B0001BDFE9 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D01FCA56290427B0001BDFE9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		D01FCA63290427B0001BDFE9 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D01FCA56290427B0001BDFE9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		D01FCA65290427B0001BDFE9 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D01FCA56290427B0001BDFE9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		D01FCA67290427B0001BDFE9 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D01FCA56290427B0001BDFE9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D01FCA2C290422FD001BDFE9 /* Project object */;
 }
