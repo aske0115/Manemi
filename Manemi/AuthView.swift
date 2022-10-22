@@ -10,27 +10,48 @@ import ComposableArchitecture
 import RxKakaoSDKCommon
 import KakaoSDKUser
 
+
+extension User: Equatable {
+    public static func == (lhs: User, rhs: User) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
 @MainActor
 struct KakaoLoginFeature: ReducerProtocol {
+
     struct State: Equatable {
-        static func == (lhs: KakaoLoginFeature.State, rhs: KakaoLoginFeature.State) -> Bool {
-            lhs.user?.id == rhs.user?.id && lhs.isLogin == rhs.isLogin
-        }
-        
         var user: User?
         var isLogin: Bool = false
     }
     
-    enum Action: Equatable {
-        static func == (lhs: KakaoLoginFeature.Action, rhs: KakaoLoginFeature.Action) -> Bool {
-            true
-        }
-        
+    enum Action {
         case pressLogin
-        case loginned(Bool)
-        case loginError(Error)
+        case loginError(Error?)
         case loginSuccess(User?)
     }
+
+    nonisolated func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
+        switch action {
+        case .pressLogin:
+            return .task {
+                let error = try await requestLogin()
+                if error == nil {
+                    return .loginSuccess(try await user())
+                } else {
+                    return .loginError(error)
+                }
+            }
+        case .loginError(let error):
+            print(error as Any)
+            return .none
+        case .loginSuccess(let user):
+            state.user = user
+            state.isLogin = user != nil
+            return .none
+        }
+    }
+    
     
     private func user() async throws -> User? {
         await withCheckedContinuation {
@@ -41,38 +62,18 @@ struct KakaoLoginFeature: ReducerProtocol {
         }
     }
     
-    private func requestLogin() async throws -> Bool {
+    private func requestLogin() async throws -> Error? {
         await withCheckedContinuation {
             continuation in
             if UserApi.isKakaoTalkLoginAvailable() {
                 UserApi.shared.loginWithKakaoTalk { oauth, error in
-                    continuation.resume(returning: oauth != nil)
+                    continuation.resume(returning: error)
                 }
             } else {
                 UserApi.shared.loginWithKakaoAccount() { oauth, error in
-                    continuation.resume(returning: oauth != nil)
+                    continuation.resume(returning: error)
                 }
             }
-        }
-    }
-    
-    nonisolated func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
-        switch action {
-        case .pressLogin:
-            return .task {
-                .loginned(try await requestLogin())
-            }
-        case .loginned(let login):
-            return .task {
-                .loginSuccess(login ? try await user() : nil)
-            }
-        case .loginError(let error):
-            print(error)
-            return .none
-        case .loginSuccess(let user):
-            state.user = user
-            state.isLogin = user != nil
-            return .none
         }
     }
 }
