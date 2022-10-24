@@ -19,7 +19,7 @@ struct ManemiApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AuthView(store: Store(initialState: KakaoLoginFeature.State(), reducer: KakaoLoginFeature()))
+            IntroView(store: Store(initialState: IntroFeature.State(), reducer: IntroFeature()))
         }
     }
 }

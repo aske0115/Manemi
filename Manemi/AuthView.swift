@@ -85,7 +85,9 @@ struct AuthView: View {
     var body: some View {
         WithViewStore(self.store) { viewStore in
             VStack {
-                Text(viewStore.isLogin ? viewStore.user?.kakaoAccount?.profile?.nickname ?? "" : "Hello, World!")
+                Spacer()
+                Text("로그인 해보거라.")
+                    .opacity(viewStore.isLogin ? 0 : 1)
                 Spacer()
                 if !viewStore.isLogin {
                     Button {
@@ -98,10 +100,12 @@ struct AuthView: View {
                         
                     }
                 } else {
+                    Text("로그인 했다 \(viewStore.user?.kakaoAccount?.profile?.nickname ?? "")")
                     if let imgURL = viewStore.user?.kakaoAccount?.profile?.profileImageUrl {
                         AsyncImage(url: imgURL)
                     }
                 }
+                Spacer()
             }
             
         }
