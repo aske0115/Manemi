@@ -84,30 +84,35 @@ struct AuthView: View {
     
     var body: some View {
         WithViewStore(self.store) { viewStore in
-            VStack {
-                Spacer()
-                Text("로그인 해보거라.")
-                    .opacity(viewStore.isLogin ? 0 : 1)
-                Spacer()
-                if !viewStore.isLogin {
-                    Button {
-                        viewStore.send(.pressLogin)
-                    } label: {
-                        Image("kakaoLoginButton")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.main.bounds.width * 0.8)
-                        
+            GeometryReader {g in
+                VStack {
+                    Spacer()
+                    Text("로그인 해보거라.")
+                        .foregroundColor(Color("mainTitleColor"))
+                        .opacity(viewStore.isLogin ? 0 : 1)
+                    Spacer()
+                    if !viewStore.isLogin {
+                        Button {
+                            viewStore.send(.pressLogin)
+                        } label: {
+                            Image("kakaoLoginButton")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.main.bounds.width * 0.8)
+                            
+                        }
+                    } else {
+                        Text("로그인 했다 \(viewStore.user?.kakaoAccount?.profile?.nickname ?? "")")
+                            .foregroundColor(Color("mainTitleColor"))
+                        if let imgURL = viewStore.user?.kakaoAccount?.profile?.profileImageUrl {
+                            AsyncImage(url: imgURL)
+                        }
                     }
-                } else {
-                    Text("로그인 했다 \(viewStore.user?.kakaoAccount?.profile?.nickname ?? "")")
-                    if let imgURL = viewStore.user?.kakaoAccount?.profile?.profileImageUrl {
-                        AsyncImage(url: imgURL)
-                    }
+                    Spacer()
                 }
-                Spacer()
+                .frame(width: g.size.width, height: g.size.height)
+                .background(Color("mainColor"))
             }
-            
         }
     }
 }
