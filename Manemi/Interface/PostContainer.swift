@@ -124,7 +124,7 @@ struct Container: Identifiable, Equatable, Hashable, Codable {
         
         try encodeContainer.encode(text, forKey: .text)
         if let image = image {
-            var datas = image.compactMap { convertImageToBase64String(from: $0) }
+            let datas = image.compactMap { convertImageToBase64String(from: $0) }
             try encodeContainer.encode(datas, forKey: .image)
         }
         try encodeContainer.encode(id, forKey: .id)
@@ -150,30 +150,29 @@ struct Container: Identifiable, Equatable, Hashable, Codable {
     var view: some View {
         return Group {
             if let image = image {
-                ImageContainerView(image: image)
+                ImageContainerView(store: Store(initialState: ImageContainerViewFeature.State(image: image), reducer: ImageContainerViewFeature()))
             }
-            if let text = text {
-                TextContainerView(text: text)
-            }
+    //        retur
+    //        if let text = text {
+    //                return TextContainerView(store: Store(initialState: TextContainerViewFeature.State(text: "dd"), reducer: TextContainerViewFeature()))
+    //        }
             if image == nil && text == nil {
                 EmptyView()
             }
         }
+        
     }
     
     private struct TextContainerView: View {
         let store: StoreOf<TextContainerViewFeature>
+        @Binding var text: String
         
         var body: some View {
             WithViewStore(self.store) { viewStore in
                 HStack {
-                    TextField("Type here", text: viewStore.text, onCommit: {
+                    TextField(text: $text) {
                         
-                    })
-                        .onTapGesture {
-                            viewStore.send(.beginEditing)
-                        }
-                        
+                    }
                         
                     Spacer()
                 }
@@ -188,7 +187,7 @@ struct Container: Identifiable, Equatable, Hashable, Codable {
             WithViewStore(self.store) { viewStore in
                 HStack(alignment: .center) {
                     ForEach(viewStore.image, id: \.self) {
-                        $0
+                        Image(uiImage: $0)
                             .resizable()
                             .scaledToFit()
                             .frame(width:200)
@@ -197,9 +196,9 @@ struct Container: Identifiable, Equatable, Hashable, Codable {
                 .onTapGesture {
                     viewStore.send(.showPicker(true))
                 }
-                .sheet(isPresented: $showPicker) {
-                    ImagePickerView(image: $image, showPicker: $showPicker)
-                }
+//                .sheet(isPresented: $showPicker) {
+//                    ImagePickerView(image: $image, showPicker: $showPicker)
+//                }
             }
         }
     }

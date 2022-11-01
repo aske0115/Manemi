@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct PostData: Equatable {
-    var image: UIImage?
+    var image: [UIImage]?
     var text: String?
 }
 
@@ -55,7 +55,7 @@ struct WritePostFeature: ReducerProtocol {
                 state.newText = post.text!
             }
             if post.image != nil {
-                state.newImage.append(post.image!)
+                state.newImage + post.image!
             }
             state.isModifying = false
             let container = state.container
@@ -63,7 +63,7 @@ struct WritePostFeature: ReducerProtocol {
             let images = state.newImage
 //            container.append(Container(text,images))
             return .task {
-                .loadContainer(container + Container(text,images))
+                .loadContainer(container + [Container(text,images)])
             }
         case .refreshPost:
             return .task {
@@ -78,30 +78,27 @@ struct WritePostFeature: ReducerProtocol {
 struct WritePostView: View {
     
     let store: StoreOf<WritePostFeature>
+    @Binding var text: String
     var body: some View {
         WithViewStore(self.store) { viewStore in
-            HStack(spacing: 2) {
+            HStack {
                 Button {
                     viewStore.send(.addImage)
                 } label: {
                     Image(systemName:"plus")
                         .foregroundColor(.gray.opacity(1))
                 }
-                
-                TextField("Type Here", text: viewStore.binding(get: \.newText, send: .beginWrite)) {
-                }
-            }.onChange(of: viewStore.newImage) { newValue in
-                viewStore.send(.endWrite((viewStore.newText, viewStore.newImage)))
+                TextField("Type Here", text: $text)
             }
-            .sheet(item: viewStore.showPicker) {
-                ImagePickerView(image: viewStore.newImage, showPicker: viewStore.showPicker)
-            }
+//            .sheet(item: viewStore.showPicker) {
+//                ImagePickerView(image: viewStore.newImage, showPicker: viewStore.showPicker)
+//            }
         }
     }
 }
 
 struct WritePostView_Previews: PreviewProvider {
     static var previews: some View {
-        WritePostView(store:Store(initialState: WritePostFeature.State(), reducer: WritePostFeature()))
+        WritePostView(store:Store(initialState: WritePostFeature.State(), reducer: WritePostFeature()), text: "")
     }
 }

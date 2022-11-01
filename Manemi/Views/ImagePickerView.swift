@@ -45,7 +45,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
                         guard let image1 = image else { return }
                         
                         DispatchQueue.main.async {
-                            self.parent.image = image1 as! UIImage
+                            self.parent.image += [image1 as! UIImage]
                         }
                     }
                 } else {
