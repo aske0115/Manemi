@@ -30,7 +30,7 @@ struct WritePostFeature: ReducerProtocol {
         }
         
         case addImage
-        case beginWrite(String)
+        case onEditing(String)
         case refreshPost
         case save
     }
@@ -40,13 +40,13 @@ struct WritePostFeature: ReducerProtocol {
         case .addImage:
             state.showPicker = true
             return .none
-        case .beginWrite(let text):
+        case .onEditing(let text):
             state.newText = text
             state.isModifying = true
             return .none
         case .refreshPost:
             return .task {
-                .beginWrite("")
+                .onEditing("")
             }
         case .save:
             return .none
@@ -60,7 +60,7 @@ struct WritePostView: View {
         WithViewStore(self.store) { viewStore in
             TextField("Enter Post",
                       text: viewStore.binding(get: { $0.newText  },
-                                              send: { .beginWrite($0) }))
+                                              send: { .onEditing($0) }))
         }
     }
 }
