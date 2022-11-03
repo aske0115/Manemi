@@ -35,7 +35,8 @@ struct IntroView: View {
     var body: some View {
         WithViewStore(self.store) { viewStore in
             if viewStore.isCompleteReadyToHome {
-                AuthView(store: Store(initialState: KakaoLoginFeature.State(), reducer: KakaoLoginFeature()))
+                WritePostView(store: Store(initialState: WritePostFeature.State(), reducer: WritePostFeature()))
+//                AuthView(store: Store(initialState: KakaoLoginFeature.State(), reducer: KakaoLoginFeature()))
             } else {
                 GeometryReader { g in
                     VStack {

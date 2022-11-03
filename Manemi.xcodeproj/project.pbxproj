@@ -32,7 +32,6 @@
 
 /* Begin PBXFileReference section */
 		D00CFFB1290429B900B5D933 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
-		D00CFFB629042F4600B5D933 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D01FCA34290422FD001BDFE9 /* Manemi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Manemi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01FCA37290422FD001BDFE9 /* ManemiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManemiApp.swift; sourceTree = "<group>"; };
 		D01FCA39290422FD001BDFE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,7 +87,6 @@
 			children = (
 				D0384300290AB90B00BCE000 /* Interface */,
 				D073758C2906B97900DA92E9 /* Views */,
-				D00CFFB629042F4600B5D933 /* Info.plist */,
 				D01FCA37290422FD001BDFE9 /* ManemiApp.swift */,
 				D01FCA39290422FD001BDFE9 /* ContentView.swift */,
 				D01FCA3B290422FF001BDFE9 /* Assets.xcassets */,
@@ -350,7 +348,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Manemi/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Manemi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -378,7 +375,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Manemi/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Manemi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
