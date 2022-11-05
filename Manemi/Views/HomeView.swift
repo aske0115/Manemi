@@ -72,26 +72,12 @@ struct HomeView: View {
                         UITabBar.appearance().barTintColor = .white
                     }
                     .accentColor(.red)
-                    .fullScreenCover(isPresented: viewStore.binding(get: \.showActionSheet, send: HomeTabViewFeature.Action.popActionSheet)) {
-                        AuthView(store:Store(initialState: KakaoLoginFeature.State(), reducer: KakaoLoginFeature()))
-                    }
-//                    .sheet(isPresented: viewStore.binding(get: \.showActionSheet, send: HomeTabViewFeature.Action.popActionSheet)) {
+//                    .fullScreenCover(isPresented: viewStore.binding(get: \.showActionSheet, send: HomeTabViewFeature.Action.popActionSheet)) {
 //                        AuthView(store:Store(initialState: KakaoLoginFeature.State(), reducer: KakaoLoginFeature()))
 //                    }
-//                    .confirmationDialog("포스트올리기", isPresented: viewStore.binding(get: \.showActionSheet, send: HomeTabViewFeature.Action.popActionSheet)) {
-//                        Button("Delete", role: .destructive) {
-//
-//                        }
-//                        Button("Delete2", role: .destructive) {
-//
-//                        }
-//                        Button("Delete3", role: .destructive) {
-//
-//                        }
-//                        Button("Cancel", role: .cancel) {
-//
-//                        }
-//                    }
+                    .sheet(isPresented: viewStore.binding(get: \.showActionSheet, send: HomeTabViewFeature.Action.popActionSheet)) {
+                        AuthView(store:Store(initialState: KakaoLoginFeature.State(), reducer: KakaoLoginFeature()))
+                    }
                     Button {
                         viewStore.send(.popActionSheet)
                     } label: {
