@@ -35,8 +35,7 @@ struct IntroView: View {
     var body: some View {
         WithViewStore(self.store) { viewStore in
             if viewStore.isCompleteReadyToHome {
-                WritePostView(store: Store(initialState: WritePostFeature.State(), reducer: WritePostFeature()))
-//                AuthView(store: Store(initialState: KakaoLoginFeature.State(), reducer: KakaoLoginFeature()))
+                HomeView(store: Store(initialState: HomeTabViewFeature.State(), reducer: HomeTabViewFeature()))
             } else {
                 GeometryReader { g in
                     VStack {
@@ -63,6 +62,7 @@ struct IntroView: View {
                 }
             }
         }
+        
     }
 }
 

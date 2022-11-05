@@ -28,7 +28,6 @@ struct HomeTabViewFeature : ReducerProtocol {
             return .none
         case .popActionSheet:
             state.showActionSheet.toggle()
-            state.selectionIndex = state.oldSelectionIndex
             return .none
         }
     }
@@ -73,20 +72,26 @@ struct HomeView: View {
                         UITabBar.appearance().barTintColor = .white
                     }
                     .accentColor(.red)
-                    .confirmationDialog("포스트올리기", isPresented: viewStore.binding(get: \.showActionSheet, send: HomeTabViewFeature.Action.popActionSheet)) {
-                        Button("Delete", role: .destructive) {
-                            
-                        }
-                        Button("Delete2", role: .destructive) {
-                           
-                        }
-                        Button("Delete3", role: .destructive) {
-                          
-                        }
-                        Button("Cancel", role: .cancel) {
-     
-                        }
+                    .fullScreenCover(isPresented: viewStore.binding(get: \.showActionSheet, send: HomeTabViewFeature.Action.popActionSheet)) {
+                        AuthView(store:Store(initialState: KakaoLoginFeature.State(), reducer: KakaoLoginFeature()))
                     }
+//                    .sheet(isPresented: viewStore.binding(get: \.showActionSheet, send: HomeTabViewFeature.Action.popActionSheet)) {
+//                        AuthView(store:Store(initialState: KakaoLoginFeature.State(), reducer: KakaoLoginFeature()))
+//                    }
+//                    .confirmationDialog("포스트올리기", isPresented: viewStore.binding(get: \.showActionSheet, send: HomeTabViewFeature.Action.popActionSheet)) {
+//                        Button("Delete", role: .destructive) {
+//
+//                        }
+//                        Button("Delete2", role: .destructive) {
+//
+//                        }
+//                        Button("Delete3", role: .destructive) {
+//
+//                        }
+//                        Button("Cancel", role: .cancel) {
+//
+//                        }
+//                    }
                     Button {
                         viewStore.send(.popActionSheet)
                     } label: {
@@ -97,6 +102,8 @@ struct HomeView: View {
                     }
                     .padding(.top, geo.size.height - 50)
                 }
+                .ignoresSafeArea()
+//                .frame(width: geo.size.width, height: geo.size.height)
             }
         }
     }
@@ -104,6 +111,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(store: Store(initialState: HomeTabViewFeature.State(), reducer: HomeTabViewFeature()))
+        HomeView(store: Store(initialState: HomeTabViewFeature.State(), reducer: HomeTabViewFeature())).preferredColorScheme(.dark)
     }
 }
