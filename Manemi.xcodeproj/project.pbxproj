@@ -28,6 +28,7 @@
 		D0384304290ABA3800BCE000 /* WritePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0384303290ABA3800BCE000 /* WritePostView.swift */; };
 		D0384306290AC85900BCE000 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0384305290AC85900BCE000 /* ImagePickerView.swift */; };
 		D07375902906BABE00DA92E9 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073758F2906BABE00DA92E9 /* IntroView.swift */; };
+		FC5D3D5729168E6500E4FBFC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D3D5629168E6500E4FBFC /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		D0384303290ABA3800BCE000 /* WritePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePostView.swift; sourceTree = "<group>"; };
 		D0384305290AC85900BCE000 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		D073758F2906BABE00DA92E9 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		FC5D3D5629168E6500E4FBFC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				D073758F2906BABE00DA92E9 /* IntroView.swift */,
 				D0384303290ABA3800BCE000 /* WritePostView.swift */,
 				D0384305290AC85900BCE000 /* ImagePickerView.swift */,
+				FC5D3D5629168E6500E4FBFC /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				D0384302290AB93D00BCE000 /* PostContainer.swift in Sources */,
 				D01FCA38290422FD001BDFE9 /* ManemiApp.swift in Sources */,
 				D0384306290AC85900BCE000 /* ImagePickerView.swift in Sources */,
+				FC5D3D5729168E6500E4FBFC /* HomeView.swift in Sources */,
 				D0384304290ABA3800BCE000 /* WritePostView.swift in Sources */,
 				D00CFFB2290429B900B5D933 /* AuthView.swift in Sources */,
 			);
