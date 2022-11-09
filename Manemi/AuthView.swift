@@ -79,12 +79,19 @@ struct KakaoLoginFeature: ReducerProtocol {
 }
 
 struct AuthView: View {
+    @Environment(\.dismiss) private var dismiss
     
     var store: StoreOf<KakaoLoginFeature>
     var body: some View {
         WithViewStore(self.store) { viewStore in
             GeometryReader {g in
                 VStack {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("close")
+                    }.padding(.trailing, 50)
+
                     Spacer()
                     Text("로그인 해보거라.")
                         .foregroundColor(Color("mainTitleColor"))

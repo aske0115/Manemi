@@ -72,21 +72,22 @@ struct HomeView: View {
                         UITabBar.appearance().barTintColor = .white
                     }
                     .accentColor(.red)
-//                    .fullScreenCover(isPresented: viewStore.binding(get: \.showActionSheet, send: HomeTabViewFeature.Action.popActionSheet)) {
-//                        AuthView(store:Store(initialState: KakaoLoginFeature.State(), reducer: KakaoLoginFeature()))
-//                    }
-                    .sheet(isPresented: viewStore.binding(get: \.showActionSheet, send: HomeTabViewFeature.Action.popActionSheet)) {
+                    .fullScreenCover(isPresented: viewStore.binding(get: \.showActionSheet, send: HomeTabViewFeature.Action.popActionSheet), onDismiss: {
+                            viewStore.send(.popActionSheet)
+                    }) {
                         AuthView(store:Store(initialState: KakaoLoginFeature.State(), reducer: KakaoLoginFeature()))
                     }
-                    Button {
-                        viewStore.send(.popActionSheet)
-                    } label: {
-                        Image(systemName: "plus.circle")
-                            .resizable()
-                            .foregroundColor(.red)
-                            .frame(width: 40, height: 40)
+                    .overlay(alignment:.bottom) {
+                        Button {
+                            viewStore.send(.popActionSheet)
+                        } label: {
+                            Image(systemName: "plus.circle")
+                                .resizable()
+                                .foregroundColor(.red)
+                                .frame(width: 40, height: 40)
+                        }
+                        .padding(40)
                     }
-                    .padding(.top, geo.size.height - 50)
                 }
                 .ignoresSafeArea()
 //                .frame(width: geo.size.width, height: geo.size.height)
