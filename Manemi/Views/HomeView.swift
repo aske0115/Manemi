@@ -41,7 +41,7 @@ struct HomeView: View {
             GeometryReader { geo in
                 ZStack {
                     TabView(selection: viewStore.binding(get: \.selectionIndex, send: HomeTabViewFeature.Action.selectedTabIndex)) {
-                        AuthView(store:Store(initialState: KakaoLoginFeature.State(), reducer: KakaoLoginFeature()))
+                        PostListView(store:Store(initialState: PostListFeature.State(), reducer: PostListFeature()))
                             .tabItem {
                                 Image(systemName: "house")
                                 Text("홈")

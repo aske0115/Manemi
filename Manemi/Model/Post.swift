@@ -7,7 +7,7 @@
 
 struct Post: Identifiable, Codable, Equatable
 {
-    var id: String
+    var id: Int
     var post: String
-    var images: [String]
+    var images: [String]?
 }
