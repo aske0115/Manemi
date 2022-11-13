@@ -75,7 +75,7 @@ struct HomeView: View {
                     .fullScreenCover(isPresented: viewStore.binding(get: \.showActionSheet, send: HomeTabViewFeature.Action.popActionSheet), onDismiss: {
                             viewStore.send(.popActionSheet)
                     }) {
-                        AuthView(store:Store(initialState: KakaoLoginFeature.State(), reducer: KakaoLoginFeature()))
+                        WritePostView(store:Store(initialState: WritePostFeature.State(), reducer: WritePostFeature()))
                     }
                     .overlay(alignment:.bottom) {
                         Button {

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import FirebaseStorage
 
 struct PostData: Equatable {
     var image: [UIImage]?
@@ -55,12 +56,28 @@ struct WritePostFeature: ReducerProtocol {
 }
 
 struct WritePostView: View {
+    @Environment(\.dismiss) private var dismiss
     let store: StoreOf<WritePostFeature>
     var body: some View {
         WithViewStore(self.store) { viewStore in
-            TextField("Enter Post",
-                      text: viewStore.binding(get: { $0.newText  },
-                                              send: { .onEditing($0) }))
+            NavigationView {
+                TextField("Enter Post",
+                              text: viewStore.binding(get: { $0.newText  },
+                                                      send: { .onEditing($0) }))
+                .navigationBarTitle("글 올리기", displayMode: .inline)
+                .navigationBarItems(leading: Button(action: {
+                    dismiss()
+                }, label: {
+                    Text("취소")
+                        .foregroundColor(.black)
+                }), trailing: Button(action: {
+                    
+                }, label: {
+                    Text("등록")
+                        .foregroundColor(.black)
+                }))
+            }
+           
         }
     }
 }
