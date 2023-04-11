@@ -21,7 +21,7 @@ struct WritePostFeature: ReducerProtocol {
         }
         var isModifying: Bool = false
         var showPicker: Bool = false
-        var newText: String = ""
+        var newText:String = ""
         var newImage: [UIImage] = []
     }
     
