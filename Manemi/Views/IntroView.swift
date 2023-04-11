@@ -11,7 +11,7 @@ import ComposableArchitecture
 struct IntroFeature: ReducerProtocol {
     struct State: Equatable {
         var isCompleteReadyToHome: Bool = false
-        var viewOpacity = 1.0
+        var viewOpacity = 1.00
     }
     
     enum Action: Equatable {
