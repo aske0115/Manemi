@@ -22,7 +22,7 @@ struct IntroFeature: ReducerProtocol {
         switch action {
         case .loadingComplete:
             state.isCompleteReadyToHome = true
-            state.viewOpacity = 0.000
+            state.viewOpacity = 0.000000
             return .none
         }
     }
